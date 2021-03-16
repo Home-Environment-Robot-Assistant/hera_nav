@@ -19,58 +19,53 @@ footprint_padding: 0.05
 
 obstacles_layer:
   enabled: true
-
   # A list of observation source names separated by spaces.
   observation_sources: laser_scan_front_observation
     # laser_scan_back_observation
     # point_cloud_base_front_observation
     # point_cloud_torso_front_observation
-
   laser_scan_front_observation: {
-      topic: base_scan_front,        # The topic on which sensor data comes in for this source.
-      sensor_frame: base_scan_front, # The frame of the origin of the sensor.
-      observation_persistence: 0.0,  # How long to keep each sensor reading in seconds. A value of 0.0 will only keep the most recent reading.
-      expected_update_rate: 0.0,     # How often to expect a reading from a sensor in seconds. A value of 0.0 will allow infinite time between readings.
-      data_type: LaserScan,          # The data type associated with the topic, right now only "PointCloud", "PointCloud2", and "LaserScan" are supported.
-      clearing: true,                # Whether or not this observation should be used to clear out freespace.
-      marking: true,                 # Whether or not this observation should be used to mark obstacles.
-      max_obstacle_height: 2.0,      # The maximum height in meters of a sensor reading considered valid.
-      min_obstacle_height: 0.035,      # The minimum height in meters of a sensor reading considered valid.
-      obstacle_range: 2.5,           # The maximum range in meters at which to insert obstacles into the costmap using sensor data.
-      raytrace_range: 3.0,           # The maximum range in meters at which to raytrace out obstacles from the map using sensor data.
-      inf_is_valid: false,           # Allows for Inf values in "LaserScan" observation messages. The Inf values are converted to the laser maximum range.
+      topic: base_scan_front,             # The topic on which sensor data comes in for this source.
+      sensor_frame: base_scan_front,      # The frame of the origin of the sensor.
+      observation_persistence: 0.0,       # How long to keep each sensor reading in seconds. A value of 0.0 will only keep the most recent reading.
+      expected_update_rate: 0.0,          # How often to expect a reading from a sensor in seconds. A value of 0.0 will allow infinite time between readings.
+      data_type: LaserScan,               # The data type associated with the topic, right now only "PointCloud", "PointCloud2", and "LaserScan" are supported.
+      clearing: true,                     # Whether or not this observation should be used to clear out freespace.
+      marking: true,                      # Whether or not this observation should be used to mark obstacles.
+      max_obstacle_height: 2.0,           # The maximum height in meters of a sensor reading considered valid.
+      min_obstacle_height: 0.035,         # The minimum height in meters of a sensor reading considered valid.
+      obstacle_range: 2.5,                # The maximum range in meters at which to insert obstacles into the costmap using sensor data.
+      raytrace_range: 3.0,                # The maximum range in meters at which to raytrace out obstacles from the map using sensor data.
+      inf_is_valid: false,                # Allows for Inf values in "LaserScan" observation messages. The Inf values are converted to the laser maximum range.
   }
-
   laser_scan_back_observation: {
-      topic: base_scan_back,         # The topic on which sensor data comes in for this source.
-      sensor_frame: base_scan_back,  # The frame of the origin of the sensor.
-      observation_persistence: 0.0,  # How long to keep each sensor reading in seconds. A value of 0.0 will only keep the most recent reading.
-      expected_update_rate: 0.0,     # How often to expect a reading from a sensor in seconds. A value of 0.0 will allow infinite time between readings.
-      data_type: LaserScan,          # The data type associated with the topic, right now only "PointCloud", "PointCloud2", and "LaserScan" are supported.
-      clearing: true,                # Whether or not this observation should be used to clear out freespace.
-      marking: true,                 # Whether or not this observation should be used to mark obstacles.
-      max_obstacle_height: 2.0,      # The maximum height in meters of a sensor reading considered valid.
-      min_obstacle_height: 0.035,      # The minimum height in meters of a sensor reading considered valid.
-      obstacle_range: 2.5,           # The maximum range in meters at which to insert obstacles into the costmap using sensor data.
-      raytrace_range: 3.0,           # The maximum range in meters at which to raytrace out obstacles from the map using sensor data.
-      inf_is_valid: false,           # Allows for Inf values in "LaserScan" observation messages. The Inf values are converted to the laser maximum range.
+      topic: base_scan_back,              # The topic on which sensor data comes in for this source.
+      sensor_frame: base_scan_back,       # The frame of the origin of the sensor.
+      observation_persistence: 0.0,       # How long to keep each sensor reading in seconds. A value of 0.0 will only keep the most recent reading.
+      expected_update_rate: 0.0,          # How often to expect a reading from a sensor in seconds. A value of 0.0 will allow infinite time between readings.
+      data_type: LaserScan,               # The data type associated with the topic, right now only "PointCloud", "PointCloud2", and "LaserScan" are supported.
+      clearing: true,                     # Whether or not this observation should be used to clear out freespace.
+      marking: true,                      # Whether or not this observation should be used to mark obstacles.
+      max_obstacle_height: 2.0,           # The maximum height in meters of a sensor reading considered valid.
+      min_obstacle_height: 0.035,         # The minimum height in meters of a sensor reading considered valid.
+      obstacle_range: 2.5,                # The maximum range in meters at which to insert obstacles into the costmap using sensor data.
+      raytrace_range: 3.0,                # The maximum range in meters at which to raytrace out obstacles from the map using sensor data.
+      inf_is_valid: false,                # Allows for Inf values in "LaserScan" observation messages. The Inf values are converted to the laser maximum range.
   }
-
   point_cloud_base_front_observation: {
-      topic: xtion/depth/points,     # The topic on which sensor data comes in for this source.
-      sensor_frame: xtion_depth,     # The frame of the origin of the sensor.
-      observation_persistence: 0.0,  # How long to keep each sensor reading in seconds. A value of 0.0 will only keep the most recent reading.
-      expected_update_rate: 0.0,     # How often to expect a reading from a sensor in seconds. A value of 0.0 will allow infinite time between readings.
-      data_type: PointCloud2,        # The data type associated with the topic, right now only "PointCloud", "PointCloud2", and "LaserScan" are supported.
-      clearing: true,                # Whether or not this observation should be used to clear out freespace.
-      marking: true,                 # Whether or not this observation should be used to mark obstacles.
-      max_obstacle_height: 2.0,      # The maximum height in meters of a sensor reading considered valid.
-      min_obstacle_height: 0.035,    # The minimum height in meters of a sensor reading considered valid.
-      obstacle_range: 2.5,           # The maximum range in meters at which to insert obstacles into the costmap using sensor data.
-      raytrace_range: 3.0,           # The maximum range in meters at which to raytrace out obstacles from the map using sensor data.
-      inf_is_valid: false,           # Allows for Inf values in "LaserScan" observation messages. The Inf values are converted to the laser maximum range.
+      topic: xtion/depth/points,          # The topic on which sensor data comes in for this source.
+      sensor_frame: xtion_depth,          # The frame of the origin of the sensor.
+      observation_persistence: 0.0,       # How long to keep each sensor reading in seconds. A value of 0.0 will only keep the most recent reading.
+      expected_update_rate: 0.0,          # How often to expect a reading from a sensor in seconds. A value of 0.0 will allow infinite time between readings.
+      data_type: PointCloud2,             # The data type associated with the topic, right now only "PointCloud", "PointCloud2", and "LaserScan" are supported.
+      clearing: true,                     # Whether or not this observation should be used to clear out freespace.
+      marking: true,                      # Whether or not this observation should be used to mark obstacles.
+      max_obstacle_height: 2.0,           # The maximum height in meters of a sensor reading considered valid.
+      min_obstacle_height: 0.035,         # The minimum height in meters of a sensor reading considered valid.
+      obstacle_range: 2.5,                # The maximum range in meters at which to insert obstacles into the costmap using sensor data.
+      raytrace_range: 3.0,                # The maximum range in meters at which to raytrace out obstacles from the map using sensor data.
+      inf_is_valid: false,                # Allows for Inf values in "LaserScan" observation messages. The Inf values are converted to the laser maximum range.
   }
-
   point_cloud_torso_front_observation: {
       topic: kinect_one/depth/points,     # The topic on which sensor data comes in for this source.
       sensor_frame: kinect_one_depth,     # The frame of the origin of the sensor.
@@ -98,16 +93,26 @@ people_layer:
   amplitude: 254 # 77.0      # Amplitude of adjustments at peak
   covariance: 1 # 0.25       # Covariance of adjustments
 
-object_layer:
-  enabled: true              # Whether to apply this plugin or not
-  topic: /points_objects     # topic with points
-  cutoff: 80 # 10.0          # Smallest value to publish on costmap adjustments
-  amplitude: 150 # 77.0      # Amplitude of adjustments at peak
-  covariance: 1 # 0.25       # Covariance of adjustments
-
 interaction_layer:
   enabled: true              # Whether to apply this plugin or not
   topic: /points_interaction # topic with points
-  cutoff: 80 # 10.0          # Smallest value to publish on costmap adjustments
+  cutoff: 230 # 10.0         # Smallest value to publish on costmap adjustments
   amplitude: 254 # 77.0      # Amplitude of adjustments at peak
   covariance: 1 # 0.25       # Covariance of adjustments
+
+  
+# object_layer:
+#   enabled: true              # Whether to apply this plugin or not
+#   topic: /points_objects     # topic with points
+#   cutoff: 80 # 10.0          # Smallest value to publish on costmap adjustments
+#   amplitude: 150 # 77.0      # Amplitude of adjustments at peak
+#   covariance: 1 # 0.25       # Covariance of adjustments
+
+
+#
+# groups_layer:
+#   enabled: true              # Whether to apply this plugin or not
+#   topic: /points_group       # topic with points
+#   cutoff: 80 # 10.0          # Smallest value to publish on costmap adjustments
+#   amplitude: 254 # 77.0      # Amplitude of adjustments at peak
+#   covariance: 1 # 0.25       # Covariance of adjustments
